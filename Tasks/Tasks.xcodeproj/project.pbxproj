@@ -10,6 +10,7 @@
 		1AAD13CA24DA47FE00E80467 /* Tasks.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1AAD13C824DA47FE00E80467 /* Tasks.xcdatamodeld */; };
 		1AAD13CC24DA4AB100E80467 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAD13CB24DA4AB100E80467 /* CoreDataStack.swift */; };
 		1AAD13CE24DA4C3D00E80467 /* Task+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAD13CD24DA4C3D00E80467 /* Task+Convenience.swift */; };
+		1AAD13EA24DCF79100E80467 /* TaskDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAD13E924DCF79100E80467 /* TaskDetailViewController.swift */; };
 		CEB451C8244E59CD00E5F9AD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB451C7244E59CD00E5F9AD /* AppDelegate.swift */; };
 		CEB451CA244E59CD00E5F9AD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB451C9244E59CD00E5F9AD /* SceneDelegate.swift */; };
 		CEB451CF244E59CD00E5F9AD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEB451CD244E59CD00E5F9AD /* Main.storyboard */; };
@@ -24,6 +25,8 @@
 		1AAD13C924DA47FE00E80467 /* Tasks.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Tasks.xcdatamodel; sourceTree = "<group>"; };
 		1AAD13CB24DA4AB100E80467 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		1AAD13CD24DA4C3D00E80467 /* Task+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Task+Convenience.swift"; sourceTree = "<group>"; };
+		1AAD13E824DCE84800E80467 /* Tasks 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Tasks 2.xcdatamodel"; sourceTree = "<group>"; };
+		1AAD13E924DCF79100E80467 /* TaskDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDetailViewController.swift; sourceTree = "<group>"; };
 		CEB451C4244E59CD00E5F9AD /* Tasks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tasks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEB451C7244E59CD00E5F9AD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CEB451C9244E59CD00E5F9AD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -101,6 +104,7 @@
 			children = (
 				CEB451DD244E5B3E00E5F9AD /* TasksTableViewController.swift */,
 				CEB451DF244E5B4800E5F9AD /* CreateTaskViewController.swift */,
+				1AAD13E924DCF79100E80467 /* TaskDetailViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -185,6 +189,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1AAD13EA24DCF79100E80467 /* TaskDetailViewController.swift in Sources */,
 				1AAD13CC24DA4AB100E80467 /* CoreDataStack.swift in Sources */,
 				CEB451C8244E59CD00E5F9AD /* AppDelegate.swift in Sources */,
 				CEB451CA244E59CD00E5F9AD /* SceneDelegate.swift in Sources */,
@@ -393,9 +398,10 @@
 		1AAD13C824DA47FE00E80467 /* Tasks.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				1AAD13E824DCE84800E80467 /* Tasks 2.xcdatamodel */,
 				1AAD13C924DA47FE00E80467 /* Tasks.xcdatamodel */,
 			);
-			currentVersion = 1AAD13C924DA47FE00E80467 /* Tasks.xcdatamodel */;
+			currentVersion = 1AAD13E824DCE84800E80467 /* Tasks 2.xcdatamodel */;
 			path = Tasks.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
