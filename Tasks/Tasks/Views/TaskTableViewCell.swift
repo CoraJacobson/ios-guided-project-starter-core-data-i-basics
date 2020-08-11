@@ -9,6 +9,10 @@
 import UIKit
 import CoreData
 
+protocol TaskCellDelegate: class {
+    func didUpdateTask(task: Task)
+}
+
 class TaskTableViewCell: UITableViewCell {
 
     // MARK: - Properties
@@ -20,6 +24,8 @@ class TaskTableViewCell: UITableViewCell {
             updateViews()
         }
     }
+    
+    weak var delegate: TaskCellDelegate?
     
     // MARK: - IBOutlets
     @IBOutlet weak var taskNameLabel: UILabel!
@@ -33,6 +39,7 @@ class TaskTableViewCell: UITableViewCell {
         
         do {
             try CoreDataStack.shared.mainContext.save()
+            delegate?.didUpdateTask(task: task)
         } catch {
             NSLog("Error saving managed object context: \(error)")
         }

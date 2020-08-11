@@ -60,10 +60,16 @@
                     <navigationItem key="navigationItem" title="Tasks" id="wW6-Vw-jhz">
                         <barButtonItem key="rightBarButtonItem" image="plus.circle" catalog="system" id="wgc-At-3Ne">
                             <connections>
-                                <segue destination="OJd-JF-q2n" kind="presentation" modalPresentationStyle="fullScreen" id="cVY-9X-W3N"/>
+                                <segue destination="OJd-JF-q2n" kind="presentation" identifier="createTaskModalSegue" modalPresentationStyle="fullScreen" id="cVY-9X-W3N"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="uUR-Xe-iXM">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <connections>
+                            <action selector="refresh:" destination="DNs-n7-5lI" eventType="valueChanged" id="MXq-7V-RS3"/>
+                        </connections>
+                    </refreshControl>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EmJ-rz-z1k" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

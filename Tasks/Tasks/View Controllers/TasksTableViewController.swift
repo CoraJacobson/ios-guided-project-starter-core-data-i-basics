@@ -10,6 +10,8 @@ import UIKit
 import CoreData
 
 class TasksTableViewController: UITableViewController {
+    
+    let taskController = TaskController()
 
     // MARK: - Properties
     lazy var fetchedResultsController: NSFetchedResultsController<Task> = {
@@ -36,6 +38,13 @@ class TasksTableViewController: UITableViewController {
         tableView.reloadData()
     }
 
+    @IBAction func refresh(_ sender: UIRefreshControl) {
+        taskController.fetchTasksFromServer { (_) in
+            DispatchQueue.main.async {
+                self.refreshControl?.endRefreshing()
+            }
+        }
+    }
     
     // MARK: - Table view data source
     
@@ -51,6 +60,7 @@ class TasksTableViewController: UITableViewController {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: TaskTableViewCell.reuseIdentifier, for: indexPath) as? TaskTableViewCell else {
             fatalError("Can't dequeue cell of type \(TaskTableViewCell.reuseIdentifier)")
         }
+        cell.delegate = self
         cell.task = fetchedResultsController.object(at: indexPath)
         return cell
     }
@@ -63,13 +73,16 @@ class TasksTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             let task = fetchedResultsController.object(at: indexPath)
-            let moc = CoreDataStack.shared.mainContext
-            moc.delete(task)
-            do {
-                try moc.save()
-            } catch {
-                moc.reset()
-                NSLog("Error saving managed object context: \(error)")
+            taskController.deleteTaskFromServer(task) { (result) in
+                guard let _ = try? result.get() else { return }
+                let moc = CoreDataStack.shared.mainContext
+                moc.delete(task)
+                do {
+                    try moc.save()
+                } catch {
+                    moc.reset()
+                    NSLog("Error saving managed object context: \(error)")
+                }
             }
         }
     }
@@ -81,6 +94,12 @@ class TasksTableViewController: UITableViewController {
             if let detailVC = segue.destination as? TaskDetailViewController,
                 let index = self.tableView.indexPathForSelectedRow {
                 detailVC.task = fetchedResultsController.object(at: index)
+                detailVC.taskController = taskController
+            }
+        } else if segue.identifier == "createTaskModalSegue" {
+            if let navVC = segue.destination as? UINavigationController,
+                let createTaskVC = navVC.viewControllers.first as? CreateTaskViewController {
+                createTaskVC.taskController = taskController
             }
         }
     }
@@ -128,4 +147,10 @@ extension TasksTableViewController: NSFetchedResultsControllerDelegate {
         }
     }
     
+}
+
+extension TasksTableViewController: TaskCellDelegate {
+    func didUpdateTask(task: Task) {
+        taskController.sendTaskToServer(task: task)
+    }
 }

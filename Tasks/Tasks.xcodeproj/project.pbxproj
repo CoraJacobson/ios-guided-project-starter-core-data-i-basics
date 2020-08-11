@@ -11,6 +11,8 @@
 		1AAD13CC24DA4AB100E80467 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAD13CB24DA4AB100E80467 /* CoreDataStack.swift */; };
 		1AAD13CE24DA4C3D00E80467 /* Task+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAD13CD24DA4C3D00E80467 /* Task+Convenience.swift */; };
 		1AAD13EA24DCF79100E80467 /* TaskDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAD13E924DCF79100E80467 /* TaskDetailViewController.swift */; };
+		1AAD13F124E22DE600E80467 /* TaskRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAD13F024E22DE600E80467 /* TaskRepresentation.swift */; };
+		1AAD13F424E2326800E80467 /* TaskController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAD13F324E2326800E80467 /* TaskController.swift */; };
 		CEB451C8244E59CD00E5F9AD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB451C7244E59CD00E5F9AD /* AppDelegate.swift */; };
 		CEB451CA244E59CD00E5F9AD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB451C9244E59CD00E5F9AD /* SceneDelegate.swift */; };
 		CEB451CF244E59CD00E5F9AD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEB451CD244E59CD00E5F9AD /* Main.storyboard */; };
@@ -27,6 +29,8 @@
 		1AAD13CD24DA4C3D00E80467 /* Task+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Task+Convenience.swift"; sourceTree = "<group>"; };
 		1AAD13E824DCE84800E80467 /* Tasks 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Tasks 2.xcdatamodel"; sourceTree = "<group>"; };
 		1AAD13E924DCF79100E80467 /* TaskDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDetailViewController.swift; sourceTree = "<group>"; };
+		1AAD13F024E22DE600E80467 /* TaskRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskRepresentation.swift; sourceTree = "<group>"; };
+		1AAD13F324E2326800E80467 /* TaskController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskController.swift; sourceTree = "<group>"; };
 		CEB451C4244E59CD00E5F9AD /* Tasks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tasks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEB451C7244E59CD00E5F9AD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CEB451C9244E59CD00E5F9AD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -56,8 +60,17 @@
 				1AAD13C824DA47FE00E80467 /* Tasks.xcdatamodeld */,
 				1AAD13CB24DA4AB100E80467 /* CoreDataStack.swift */,
 				1AAD13CD24DA4C3D00E80467 /* Task+Convenience.swift */,
+				1AAD13F024E22DE600E80467 /* TaskRepresentation.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		1AAD13F224E2325300E80467 /* ModelControllers */ = {
+			isa = PBXGroup;
+			children = (
+				1AAD13F324E2326800E80467 /* TaskController.swift */,
+			);
+			path = ModelControllers;
 			sourceTree = "<group>";
 		};
 		CEB451BB244E59CD00E5F9AD = {
@@ -79,6 +92,7 @@
 		CEB451C6244E59CD00E5F9AD /* Tasks */ = {
 			isa = PBXGroup;
 			children = (
+				1AAD13F224E2325300E80467 /* ModelControllers */,
 				1AAD13C724DA47B800E80467 /* Model */,
 				CEB451E1244E5B5700E5F9AD /* Application */,
 				CEB451E2244E5B6000E5F9AD /* View Controllers */,
@@ -196,8 +210,10 @@
 				1AAD13CA24DA47FE00E80467 /* Tasks.xcdatamodeld in Sources */,
 				1AAD13CE24DA4C3D00E80467 /* Task+Convenience.swift in Sources */,
 				CEB451DE244E5B3E00E5F9AD /* TasksTableViewController.swift in Sources */,
+				1AAD13F424E2326800E80467 /* TaskController.swift in Sources */,
 				CEB451DC244E5B3300E5F9AD /* TaskTableViewCell.swift in Sources */,
 				CEB451E0244E5B4800E5F9AD /* CreateTaskViewController.swift in Sources */,
+				1AAD13F124E22DE600E80467 /* TaskRepresentation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
